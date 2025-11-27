@@ -10,6 +10,7 @@ All assignment requirements have been fully completed.
 # 📁 Project Structure
 
 faralpha-devops-assignment/
+
 ├── README.md
 ├── ANSWERS.md
 ├── flask-mongodb-app/

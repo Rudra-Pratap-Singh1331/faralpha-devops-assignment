@@ -17,29 +17,29 @@ faralpha-devops-assignment/
 
 ├── flask-mongodb-app/
 
-│   ├── app.py
+│      ├── app.py
 
-│   ├── Dockerfile
+│      ├── Dockerfile
 
-│   ├── requirements.txt
+│      ├── requirements.txt
 
-│   ├── mongo-secret.yaml
+│      ├── mongo-secret.yaml
 
-│   ├── mongo-pv.yaml
+│      ├── mongo-pv.yaml
 
-│   ├── mongo-pvc.yaml
+│      ├── mongo-pvc.yaml
 
-│   ├── mongo-statefulset.yaml
+│      ├── mongo-statefulset.yaml
 
-│   ├── mongo-service.yaml
+│      ├── mongo-service.yaml
 
-│   ├── flask-deployment.yaml
+│      ├── flask-deployment.yaml
 
-│   ├── flask-service.yaml
+│      ├── flask-service.yaml
 
-│   ├── flask-hpa.yaml
+│      ├── flask-hpa.yaml
 
-│   └── .gitignore
+│      └── .gitignore
 
 ---
 

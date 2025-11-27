@@ -46,7 +46,7 @@ Flask runs on port **5000** inside the container.
 ---
 
 # 🐳 2. Dockerfile (Flask Application)
-
+```
 FROM python:3.10-slim
 WORKDIR /app
 COPY requirements.txt .
@@ -54,66 +54,66 @@ RUN pip install -r requirements.txt
 COPY app.py .
 EXPOSE 5000
 CMD ["python", "app.py"]
-
+```
 ---
 
 # 🏗 3. Build & Push Docker Image
 
 ### Build:
-
+```
 docker build -t <dockerhub-username>/flask-mongo-app:latest .
-
+```
 ### Login:
-
+```
 docker login
-
+```
 ### Push:
-
+```
 docker push <dockerhub-username>/flask-mongo-app:latest
-
+```
 ---
 
 # ☸️ 4. Kubernetes Deployment Steps (Minikube / Docker Desktop)
 
 ## Step 1 — Create Secret (DB Username & Password)
-
+```
 kubectl apply -f mongo-secret.yaml
-
+```
 ## Step 2 — Create Persistent Volume & PVC
-
+```
 kubectl apply -f mongo-pv.yaml
 kubectl apply -f mongo-pvc.yaml
-
+```
 ## Step 3 — Deploy MongoDB StatefulSet (With Authentication)
-
+```
 kubectl apply -f mongo-statefulset.yaml
-
+```
 ## Step 4 — Expose MongoDB (ClusterIP)
-
+```
 kubectl apply -f mongo-service.yaml
-
+```
 ## Step 5 — Deploy Flask Application (2 Replicas)
-
+```
 kubectl apply -f flask-deployment.yaml
-
+```
 ## Step 6 — Expose Flask Using NodePort
-
+```
 kubectl apply -f flask-service.yaml
-
+```
 ## Step 7 — Apply Horizontal Pod Autoscaler
-
+```
 kubectl apply -f flask-hpa.yaml
-
+```
 ---
 
 # 🔍 5. Verify All Deployments
-
+```
 kubectl get pods
 kubectl get svc
 kubectl get pvc
 kubectl get pv
 kubectl get hpa
-
+```
 ---
 
 # 🌐 6. Access Application
@@ -186,11 +186,10 @@ Scale **down** automatically when load reduces.
 # 🧪 12. Testing Scenarios (Cookie Points)
 
 ## Autoscaling Load Test
-
+```
 kubectl run load --image=busybox --restart=Never -it -- sh -c "while true; do wget -qO- http://flask-service:5000
-
 > /dev/null; done"
-
+```
 Observed:
 
 - CPU usage exceeded 70%
@@ -199,7 +198,7 @@ Observed:
 
 ## Database Test
 
-Insert: curl -X POST -H "Content-Type: application/json" -d '{"sampleKey":"sampleValue"}' http://localhost:30080/data
+Insert: ``` curl -X POST -H "Content-Type: application/json" -d '{"sampleKey":"sampleValue"}' http://localhost:30080/data```
 
 Retrieve: curl http://localhost:30080/data
 

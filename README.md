@@ -12,19 +12,33 @@ All assignment requirements have been fully completed.
 faralpha-devops-assignment/
 
 ├── README.md
+
 ├── ANSWERS.md
+
 ├── flask-mongodb-app/
+
 │   ├── app.py
+
 │   ├── Dockerfile
+
 │   ├── requirements.txt
+
 │   ├── mongo-secret.yaml
+
 │   ├── mongo-pv.yaml
+
 │   ├── mongo-pvc.yaml
+
 │   ├── mongo-statefulset.yaml
+
 │   ├── mongo-service.yaml
+
 │   ├── flask-deployment.yaml
+
 │   ├── flask-service.yaml
+
 │   ├── flask-hpa.yaml
+
 │   └── .gitignore
 
 ---

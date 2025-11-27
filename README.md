@@ -9,7 +9,7 @@ All assignment requirements have been fully completed.
 
 # 📁 Project Structure
 
-faralpha-devops-assignment/
+```faralpha-devops-assignment/
 ├── README.md
 ├── ANSWERS.md
 └── flask-mongodb-app/
@@ -25,7 +25,7 @@ faralpha-devops-assignment/
 ├── flask-service.yaml
 ├── flask-hpa.yaml
 └── .gitignore
----
+ ```
 
 # 🚀 1. Flask Application Overview
 

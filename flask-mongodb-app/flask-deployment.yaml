@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: flask-app
-          image: <your-docker-username>/flask-mongo-app:latest
+          image: rudrapsingh/flask-mongo-app:latest
           env:
             - name: MONGODB_URI
               value: mongodb://mongo-user:mongo-pass@mongodb-service:27017/
